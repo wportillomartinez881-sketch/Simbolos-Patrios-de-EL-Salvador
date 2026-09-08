@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Símbolos Patrios de El Salvador | Identidad y Orgullo</title>
+    <!-- Tipografía Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #094eb8;
+            --deep-blue: #052357;
+            --accent-gold: #d4af37;
+            --glow-gold: rgba(212, 175, 55, 0.4);
+            --glow-blue: rgba(9, 132, 255, 0.55);
+            --bg-body: #0a1124;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(9, 78, 184, 0.28) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Hero / Encabezado */
+        header {
+            position: relative;
+            padding: 4.5rem 1.5rem 3rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(5, 35, 87, 0.8) 0%, rgba(10, 17, 36, 0) 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .flag-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(9, 78, 184, 0.35);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffd700;
+            margin-bottom: 1.2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, #ffd700 80%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        /* Botones de Filtro */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
+            padding: 8px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-blue);
+            border-color: #60a5fa;
+            box-shadow: 0 0 15px rgba(9, 132, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor */
+        .container {
+            max-width: 1250px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Rejilla */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.2rem;
+        }
+
+        /* Tarjeta con Borde Iluminado */
+        .card {
+            position: relative;
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            border-radius: 20px;
+            border: 1.5px solid var(--card-border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        border-color 0.4s ease, 
+                        box-shadow 0.4s ease;
+        }
+
+        /* Efecto de ILUMINACIÓN al pasar el cursor */
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00c6ff;
+            box-shadow: 
+                0 0 20px var(--glow-blue),
+                0 0 35px rgba(0, 198, 255, 0.25),
+                0 20px 40px rgba(0, 0, 0, 0.55);
+        }
+
+        /* Contenedor de Imagen adaptativo (soluciona el recorte) */
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(5, 20, 50, 0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Imágenes de naturaleza */
+        .card-img-wrapper img.natural {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        /* Imágenes de emblemas (Escudo y Bandera completos sin cortes) */
+        .card-img-wrapper img.emblem {
+            width: auto;
+            max-width: 82%;
+            max-height: 82%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.07);
+        }
+
+        /* Badge de Categoría sobre la imagen */
+        .badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(5, 35, 87, 0.85);
+            border: 1px solid var(--accent-gold);
+            color: #ffd700;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+            z-index: 2;
+        }
+
+        /* Contenido de la Tarjeta */
+        .card-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-content h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+
+        /* Botón de acción interactivo */
+        .btn-more {
+            margin-top: 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 9px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .btn-more:hover {
+            background: linear-gradient(90deg, var(--primary-blue), #00c6ff);
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+        }
+
+        /* Modal interactivo */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #0f1c3f;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 0 35px var(--glow-blue);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(5, 15, 36, 0.8);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="flag-badge">
+            <span>🇸🇻</span> República de El Salvador
+        </div>
+        <h1>Símbolos Patrios</h1>
+        <p>Tesoros cívicos, riqueza natural y memoria histórica de la tierra cuscatleca.</p>
+        
+        <!-- Filtros Rápidos -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterCards('all')">Todos</button>
+            <button class="filter-btn" onclick="filterCards('civico')">Emblemas Cívicos</button>
+            <button class="filter-btn" onclick="filterCards('naturaleza')">Flora y Fauna</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+
+            <!-- La Bandera Nacional -->
+            <article class="card" data-category="civico">
+                <div class="card-img-wrapper">
+                    <span class="badge">Emblema</span>
+                    <img class="emblem" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg" alt="Bandera Nacional de El Salvador">
+                </div>
+                <div class="card-content">
+                    <span class="card-meta">Adoptada en 1912</span>
+                    <h2>La Bandera Nacional</h2>
+                    <p>Inspirada en el pabellón de las Provincias Unidas de Centroamérica. Sus dos franjas azules simbolizan el cielo y los océanos Atlántico y Pacífico; la franja blanca central evoca el anhelo irrenunciable de paz.</p>
+                    <button class="btn-more" onclick="showModal('La Bandera Nacional', 'Decretada oficialmente el 17 de mayo de 1912 por el presidente Manuel Enrique Araujo. Existen tres variantes oficiales: la Magna (con escudo dorado), la de uso oficial en edificios públicos y la civil con la leyenda Dios Unión Libertad.')">
+                        <span>Descubrir más</span> &rarr;
+                    </button>
+                </div>
+            </article>
+
+            <!-- El Escudo Nacional -->
+            <article class="card" data-category="civico">
+                <div class="card-img-wrapper">
+                    <span class="badge">Emblema</span>
+                    <img class="emblem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Coat_of_arms_of_El_Salvador.svg/800px-Coat_of_arms_of_El_Salvador.svg.png" alt="Escudo Nacional de El Salvador">
+                </div>
+                <div class="card-content">
+                    <span class="card-meta">Creado en 1912</span>
+                    <h2>El Escudo Nacional</h2>
+                    <p>Obra maestra creada por el calígrafo salvadoreño Rafael Barraza. El triángulo equilátero simboliza la igualdad ante la ley; sus cinco volcanes representan las repúblicas centroamericanas bañadas por dos océanos.</p>
+                    <button class="btn-more" onclick="showModal('El Escudo Nacional', 'Contiene 14 ramos de laurel que representan los 14 departamentos de El Salvador. En su centro resplandece el gorro frigio sobre la fecha de independencia: 15 de septiembre de 1821.')">
+                        <span>Descubrir más</span> &rarr;
+                    </button>
+                </div>
+            </article>
+
+            <!-- El Torogoz -->
+            <article class="card" data-category="naturaleza">
+                <div class="card-img-wrapper">
+                    <span class="badge">Ave Nacional</span>
+                    <img class="natural" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Turquoise-browed_Motmot_%2816423222357%29.jpg/1024px-Turquoise-browed_Motmot_%2816423222357%29.jpg" alt="Torogoz Ave Nacional">
+                </div>
+                <div class="card-content">
+                    <span class="card-meta">Decreto en 1999</span>
+                    <h2>El Torogoz</h2>
+                    <p>Conocido científicamente como <em>Eumomota superciliosa</em>. Destaca por su singular plumaje turquesa y cola con dos plumas en forma de raqueta. Es símbolo absoluto de libertad, ya que no sobrevive en cautiverio.</p>
+                    <button class="btn-more" onclick="showModal('El Torogoz (Momoto Cejiturquesa)', 'Fue declarado Ave Nacional el 21 de octubre de 1999 por la Asamblea Legislativa. Se caracteriza por anidar en barrancos y taludes de tierra, y suele observarse balanceando su cola como un péndulo.')">
+                        <span>Descubrir más</span> &rarr;
+                    </button>
+                </div>
+            </article>
+
+            <!-- El Maquilíshuat -->
+            <article class="card" data-category="naturaleza">
+                <div class="card-img-wrapper">
+                    <span class="badge">Árbol Nacional</span>
+                    <img class="natural" src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1200&q=80" alt="Floración de Maquilíshuat">
+                </div>
+                <div class="card-content">
+                    <span class="card-meta">Decreto en 1939</span>
+                    <h2>El Maquilíshuat</h2>
+                    <p>El <em>Tabebuia rosea</em> viste de gala los paisajes salvadoreños durante la época seca, cubriéndose por completo de delicadas flores rosadas y lilas. Posee además una madera de altísima calidad y propiedades medicinales.</p>
+                    <button class="btn-more" onclick="showModal('El Maquilíshuat', 'Declarado Árbol Nacional de El Salvador junto al Bálsamo el 26 de junio de 1939. Su nombre deriva del náhuat y hace referencia a sus hojas compuestas de cinco foliolos.')">
+                        <span>Descubrir más</span> &rarr;
+                    </button>
+                </div>
+            </article>
+
+            <!-- La Flor de Izote -->
+            <article class="card" data-category="naturaleza">
+                <div class="card-img-wrapper">
+                    <span class="badge">Flor Nacional</span>
+                    <img class="natural" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flor_de_izote.jpg/1024px-Flor_de_izote.jpg" alt="Flor de Izote">
+                </div>
+                <div class="card-content">
+                    <span class="card-meta">Decreto en 1995</span>
+                    <h2>La Flor de Izote</h2>
+                    <p>Especie representativa de la familia de las agaváceas (<em>Yucca gigantea</em>). Sus racimos de flores blancas acampanadas no solo aportan belleza silvestre, sino que forman parte esencial de la gastronomía típica salvadoreña.</p>
+                    <button class="btn-more" onclick="showModal('La Flor de Izote', 'Declarada oficialmente Flor Nacional el 21 de diciembre de 1995. Es tradicionalmente cocinada con huevo revuelto o en caldos, siendo un símbolo único donde conviven la botánica y el arte culinario.')">
+                        <span>Descubrir más</span> &rarr;
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Modal Dinámico de Detalles -->
+    <div class="modal" id="infoModal" onclick="closeModal(event)">
+        <div class="modal-box">
+            <button class="close-btn" onclick="forceCloseModal()">&times;</button>
+            <h3 id="modalTitle" style="color: #60a5fa; margin-bottom: 0.8rem; font-size: 1.4rem;"></h3>
+            <p id="modalDesc" style="color: #cbd5e1; font-size: 1rem; line-height: 1.7;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>Identidad Salvadoreña</strong> — Proyecto Educativo.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.4rem; opacity: 0.7;">Diseñado con HTML5, CSS moderno y optimizado para GitHub Pages.</p>
+    </footer>
+
+    <!-- Script de Interactividad -->
+    <script>
+        // Filtrar tarjetas por categoría
+        function filterCards(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal emergente
+        function showModal(title, text) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = text;
+            document.getElementById('infoModal').classList.add('active');
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'infoModal') {
+                document.getElementById('infoModal').classList.remove('active');
+            }
+        }
+
+        function forceCloseModal() {
+            document.getElementById('infoModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
