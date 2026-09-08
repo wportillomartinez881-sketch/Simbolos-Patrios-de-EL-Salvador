@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Evita el bloqueo de imágenes por parte de servidores externos en GitHub Pages -->
+    <meta name="referrer" content="no-referrer">
+    
     <title>Símbolos Patrios de El Salvador | Identidad Nacional</title>
     
     <!-- Tipografía Google Fonts -->
@@ -17,7 +20,7 @@
             --accent-gold: #d4af37;
             --gold-bright: #ffda66;
             --bg-dark: #070d1e;
-            --card-bg: rgba(13, 27, 62, 0.7);
+            --card-bg: rgba(13, 27, 62, 0.75);
             --card-border: rgba(212, 175, 55, 0.25);
             --text-main: #f1f5f9;
             --text-secondary: #94a3b8;
@@ -33,8 +36,8 @@
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 71, 171, 0.35) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.2) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(0, 71, 171, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.22) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.7;
@@ -45,7 +48,7 @@
         header {
             text-align: center;
             padding: 4rem 1.5rem 2.5rem;
-            background: linear-gradient(180deg, rgba(3, 16, 43, 0.9) 0%, rgba(7, 13, 30, 0) 100%);
+            background: linear-gradient(180deg, rgba(3, 16, 43, 0.95) 0%, rgba(7, 13, 30, 0) 100%);
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
@@ -96,7 +99,7 @@
             gap: 2.5rem;
         }
 
-        /* Tarjeta con borde que se ilumina al acercar el cursor */
+        /* Tarjeta con borde iluminado al acercar el cursor */
         .card {
             background: var(--card-bg);
             border-radius: 18px;
@@ -109,7 +112,7 @@
             position: relative;
         }
 
-        /* EFECTO DE ILUMINACIÓN */
+        /* EFECTO DE ILUMINACIÓN (Hover Glow) */
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--electric-blue);
@@ -119,12 +122,12 @@
                 0 15px 30px rgba(0, 0, 0, 0.6);
         }
 
-        /* Contenedor de Imagen (Soluciona cortes y deformaciones) */
+        /* Contenedor de Imagen adaptativo */
         .card-img-wrapper {
             position: relative;
             width: 100%;
             aspect-ratio: 16 / 10;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(4, 12, 31, 0.8) 100%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(4, 12, 31, 0.9) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -132,17 +135,17 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Para el Escudo y Bandera (Se ven enteros, sin cortes) */
+        /* Imágenes de símbolos cívicos (Escudo y Bandera completos) */
         .card-img-wrapper img.emblem {
             width: auto;
             max-width: 82%;
             max-height: 82%;
             object-fit: contain;
-            filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
             transition: transform 0.4s ease;
         }
 
-        /* Para imágenes de flora y fauna */
+        /* Imágenes fotográficas */
         .card-img-wrapper img.natural {
             width: 100%;
             height: 100%;
@@ -158,7 +161,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(3, 16, 43, 0.85);
+            background: rgba(3, 16, 43, 0.88);
             border: 1px solid var(--accent-gold);
             color: var(--gold-bright);
             font-size: 0.72rem;
@@ -167,6 +170,7 @@
             border-radius: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            z-index: 2;
         }
 
         /* Contenido de la Tarjeta */
@@ -200,9 +204,9 @@
             margin-bottom: 1rem;
         }
 
-        /* Cita o Bloque Destacado con datos del MINEDUCYT/MUHNES */
+        /* Cita o Bloque Destacado (Información del MUHNES) */
         .highlight-quote {
-            background: rgba(0, 71, 171, 0.2);
+            background: rgba(0, 71, 171, 0.22);
             border-left: 3px solid var(--accent-gold);
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
@@ -260,11 +264,15 @@
     <main class="container">
         <div class="grid">
 
-            <!-- FLOR DE IZOTE (Información íntegra de la guía del MUHNES) -->
+            <!-- FLOR DE IZOTE -->
             <article class="card">
                 <div class="card-img-wrapper">
                     <span class="badge">Flor Nacional</span>
-                    <img class="natural" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flor_de_izote.jpg/1024px-Flor_de_izote.jpg" alt="Flor de Izote">
+                    <img class="natural" 
+                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flor_de_izote.jpg/1024px-Flor_de_izote.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80';"
+                         referrerpolicy="no-referrer"
+                         alt="Flor de Izote">
                 </div>
                 <div class="card-content">
                     <span class="meta-date">Decreto: 21 de Diciembre de 1995</span>
@@ -284,11 +292,15 @@
                 </div>
             </article>
 
-            <!-- ESCUDO NACIONAL (Información íntegra de Rafael Barraza) -->
+            <!-- ESCUDO NACIONAL -->
             <article class="card">
                 <div class="card-img-wrapper">
                     <span class="badge">Emblema Cívico</span>
-                    <img class="emblem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Coat_of_arms_of_El_Salvador.svg/800px-Coat_of_arms_of_El_Salvador.svg.png" alt="Escudo Nacional de El Salvador">
+                    <img class="emblem" 
+                         src="https://mainfacts.com/media/images/coats_of_arms/sv.png" 
+                         onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Coat_of_arms_of_El_Salvador.svg/800px-Coat_of_arms_of_El_Salvador.svg.png';"
+                         referrerpolicy="no-referrer"
+                         alt="Escudo Nacional de El Salvador">
                 </div>
                 <div class="card-content">
                     <span class="meta-date">Adoptado en 1912</span>
@@ -299,11 +311,11 @@
 
                     <ul class="symbol-points">
                         <li><strong>El Triángulo Equilátero:</strong> Símbolo de Libertad, Igualdad y Fraternidad.</li>
-                        <li><strong>Los Dos Mares:</strong> El espíritu de unión con las naciones libres.</li>
+                        <li><strong>Los Dos Mares:</strong> El espíritu de unión con las demás naciones libres.</li>
                         <li><strong>Los Cinco Volcanes:</strong> La bravura y las parcelas de la Patria Grande.</li>
-                        <li><strong>Gorro Frigio e Iris de Paz:</strong> Liberación del yugo extranjero y el sendero de paz centroamericano.</li>
+                        <li><strong>Gorro Frigio e Iris de Paz:</strong> Liberación del yugo extranjero y el sendero de paz.</li>
                         <li><strong>14 Ramos de Laurel:</strong> Representan los 14 departamentos de la República.</li>
-                        <li><strong>«Dios, Unión, Libertad»:</strong> Fe en un Poder Superior, armonía social y dignidad soberana.</li>
+                        <li><strong>«Dios, Unión, Libertad»:</strong> Fe en un Poder Superior, armonía social y libertad invicta.</li>
                     </ul>
                 </div>
             </article>
@@ -312,34 +324,42 @@
             <article class="card">
                 <div class="card-img-wrapper">
                     <span class="badge">Pabellón Nacional</span>
-                    <img class="emblem" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg" alt="Bandera de El Salvador">
+                    <img class="emblem" 
+                         src="https://flagcdn.com/w1280/sv.png" 
+                         onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg';"
+                         referrerpolicy="no-referrer"
+                         alt="Bandera de El Salvador">
                 </div>
                 <div class="card-content">
                     <span class="meta-date">Adoptada en 1912</span>
                     <h2>La Bandera Nacional</h2>
                     <p>
-                        Adoptada bajo la presidencia del Dr. Manuel Enrique Araujo. Conserva los colores de la enseña federal de las Provincias Unidas de Centroamérica y el sueño unionista de Francisco Morazán.
+                        Adoptada bajo la presidencia del Dr. Manuel Enrique Araujo. Conserva los colores de la enseña federal de las Provincias Unidas de Centroamérica y el ideario patriótico de Francisco Morazán.
                     </p>
                     <p>
-                        Las dos franjas azules simbolizan el cielo cuscatleco y los océanos que bañan a Centroamérica. La franja blanca del medio representa la pureza del alma salvadoreña y la paz.
+                        Las dos franjas azules simbolizan el cielo cuscatleco y los océanos Atlántico y Pacífico. La franja central blanca encarna la pureza y el anhelo perenne de paz de la nación salvadoreña.
                     </p>
                 </div>
             </article>
 
-            <!-- EL TOROGOZ (El ave que estaba en la ruta local del archivo) -->
+            <!-- EL TOROGOZ -->
             <article class="card">
                 <div class="card-img-wrapper">
                     <span class="badge">Ave Nacional</span>
-                    <img class="natural" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Turquoise-browed_Motmot_%2816423222357%29.jpg/1024px-Turquoise-browed_Motmot_%2816423222357%29.jpg" alt="Torogoz">
+                    <img class="natural" 
+                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Turquoise-browed_Motmot_%2816423222357%29.jpg/1024px-Turquoise-browed_Motmot_%2816423222357%29.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1000&q=80';"
+                         referrerpolicy="no-referrer"
+                         alt="Torogoz Ave Nacional">
                 </div>
                 <div class="card-content">
                     <span class="meta-date">Decreto: 21 de Octubre de 1999</span>
                     <h2>El Torogoz</h2>
                     <p>
-                        Conocido como Momoto Cejiturquesa (<em>Eumomota superciliosa</em>). Es reconocido por su vistoso plumaje azul y verde tornasol, y su cola de raqueta que oscila como un péndulo.
+                        Conocido como Momoto Cejiturquesa (<em>Eumomota superciliosa</em>). Destaca por su singular plumaje azul y verde tornasol, y sus características plumas caudales en forma de raqueta.
                     </p>
                     <p>
-                        Fue declarado Ave Nacional por la Asamblea Legislativa como estandarte de la <strong>libertad inquebrantable</strong>, ya que no tolera el cautiverio.
+                        Fue declarado Ave Nacional por la Asamblea Legislativa como estandarte de la <strong>libertad</strong>, ya que no tolera el cautiverio y solo subsiste en su hábitat silvestre.
                     </p>
                 </div>
             </article>
@@ -348,16 +368,20 @@
             <article class="card">
                 <div class="card-img-wrapper">
                     <span class="badge">Árbol Nacional</span>
-                    <img class="natural" src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1200&q=80" alt="Árbol Maquilíshuat">
+                    <img class="natural" 
+                         src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1000&q=80" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80';"
+                         referrerpolicy="no-referrer"
+                         alt="Árbol Maquilíshuat en flor">
                 </div>
                 <div class="card-content">
                     <span class="meta-date">Decreto: 26 de Junio de 1939</span>
                     <h2>El Maquilíshuat</h2>
                     <p>
-                        Designado Árbol Nacional de El Salvador (<em>Tabebuia rosea</em>). Durante los meses secos pierde su follaje y florece en un manto de tonos rosados que engalana campos y ciudades.
+                        Designado Árbol Nacional de El Salvador (<em>Tabebuia rosea</em>). Durante la estación seca se viste de un espectáculo floral rosado y lila que ornamenta ciudades y campos.
                     </p>
                     <p>
-                        Su nombre de raíz náhuat hace alusión a sus hojas compuestas de cinco foliolos. Posee además una madera preciosa muy cotizada y propiedades en la botánica tradicional.
+                        Su nombre de origen náhuat alude a sus hojas compuestas de cinco foliolos. Su madera es de fina calidad y sus flores forman parte del patrimonio ecológico y cultural del país.
                     </p>
                 </div>
             </article>
